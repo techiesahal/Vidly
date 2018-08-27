@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201808270753565_FeedMembershipTypesTable.Designer.cs">
       <DependentUpon>201808270753565_FeedMembershipTypesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808271410549_GenresTableFeed.cs" />
+    <Compile Include="Migrations\201808271410549_GenresTableFeed.Designer.cs">
+      <DependentUpon>201808271410549_GenresTableFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808270753565_FeedMembershipTypesTable.resx">
       <DependentUpon>201808270753565_FeedMembershipTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271410549_GenresTableFeed.resx">
+      <DependentUpon>201808271410549_GenresTableFeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
