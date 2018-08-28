@@ -1,33 +1,4 @@
-﻿@*@model Vidly.ViewModels.ListMovieViewModel
-
-
-    @{
-        ViewBag.Title = "Movies";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-
-    <h2>Movies</h2>
-    @if (Model.movies.Count == 0)
-    {
-        <p>No movies in the library.</p>
-    }
-    else
-    {
-        <table class=“table table-­‐bordered table-­‐hover”>
-            <tr>
-                <th>Movie</th>
-            </tr>
-            @foreach (var movie in Model.movies)
-            {
-                <tr><td>@movie.Name</td></tr>
-            }
-        </table>
-
-    }*@
-
-
-
-@model IEnumerable<Vidly.Models.Movie>
+﻿@model IEnumerable<Vidly.Models.Movie>
 
 @{
     ViewBag.Title = "Movies";
@@ -35,6 +6,8 @@
 }
 
 <h2>Movies</h2>
+@Html.ActionLink("NEW MOVIE", "New", "Movies", null, new { @class = "btn btn-primary" })
+
 @if (!Model.Any())
 {
     <p>We don't have any movies in stock now.</p>
