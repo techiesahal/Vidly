@@ -40,7 +40,7 @@ namespace Vidly.Controllers.Api
 
         // POST /api/movies
         [HttpPost]
-        public IHttpActionResult CreateCustomer(MovieDto movieDto)
+        public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
                 //throw new HttpResponseException(HttpStatusCode.BadRequest);
