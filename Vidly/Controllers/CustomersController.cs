@@ -73,9 +73,7 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index() //The return type was ViewResult in the tutorial
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-
-            return View(customers);
+            return View();
         }
 
         // GET: Customers/Details/1
