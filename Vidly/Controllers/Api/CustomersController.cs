@@ -45,6 +45,7 @@ namespace Vidly.Controllers.Api
         }
 
         // POST /api/customers
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
@@ -64,6 +65,7 @@ namespace Vidly.Controllers.Api
         }
 
         // PUT /api/customers/1
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         [HttpPut]
         public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
@@ -83,6 +85,7 @@ namespace Vidly.Controllers.Api
         }
 
         // DELETE /api/customers/1
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         [HttpDelete]
         public IHttpActionResult DeleteCustomer(int id)
         {

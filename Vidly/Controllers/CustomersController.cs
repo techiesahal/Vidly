@@ -24,7 +24,18 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        // GET: Customers
+        public ActionResult Index() //The return type was ViewResult in the tutorial
+        {
+            if (User.IsInRole(RoleName.CanManageCustomers))
+                return View("List");
+
+            return View("ReadOnlyList");
+        }
+
+
         // New Customer Action
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -70,12 +81,6 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Customers");
         }
 
-        // GET: Customers
-        public ActionResult Index() //The return type was ViewResult in the tutorial
-        {
-            return View();
-        }
-
         // GET: Customers/Details/1
         public ActionResult Details(int id)
         {
@@ -88,6 +93,7 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
