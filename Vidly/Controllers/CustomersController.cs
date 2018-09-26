@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Runtime.Caching;
 
 namespace Vidly.Controllers
 {
@@ -27,6 +28,15 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index() //The return type was ViewResult in the tutorial
         {
+            /*
+            if (MemoryCache.Default["Genres"] == null)
+            {
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+            */
+
             if (User.IsInRole(RoleName.CanManageCustomers))
                 return View("List");
 
