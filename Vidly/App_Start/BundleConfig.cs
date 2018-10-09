@@ -29,8 +29,10 @@ namespace Vidly
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen3.css",
+                      "~/Content/Vidly-bootstrap-theme.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/Content/typeahead.css",
+                      "~/Content/Vidly-typeahead.css",
                       "~/Content/toastr.css",
                       "~/Content/Site.css"                      
                       ));
